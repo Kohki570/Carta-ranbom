@@ -4,6 +4,7 @@ color:green;
 }
 
 input{
-    font-size:40px;
+    font-size:30px;
     color:blue;
+    float:left;
 }
