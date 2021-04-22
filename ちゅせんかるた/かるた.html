@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ふだわけ</title>
+</head>
+<body>
+<!----使用済みclass= a -->
+
+    <div　class="a">百人一首</div>
+
+
+
+    <script type ="text/javascript">
+
+                //表裏
+                
+     function gate(){
+            rand = Math.floor(Math.random()*3);
+            if(rand ==0) msg ="表一";
+            if(rand ==1) msg ="表十";
+            if(rand ==2) msg ="裏";
+
+             //数字ランダム (０～９の内５個抽出)
+
+            function random(array, num) {
+                var a = array;
+                var t = [];
+                var r = [];
+                var l = a.length;
+                var n = num < l ? num : l;
+                while (n-- > 0) {
+                  var i = Math.random() * l | 0;
+                  r[n] = t[i] || a[i];
+                  --l;
+                  t[i] = t[l] || a[l];
+                }
+                return r;
+              }
+            
+             
+              
+              var test_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+              fivefig = random(test_array, 5);
+
+
+              //数字５個を小さい順にする
+
+              fivefig.sort(
+                    function(a,b){
+                        return (a < b ? -1:1);
+                    }
+              );
+
+    alert(msg +" の " + fivefig);
+
+     }
+            
+     
+    
+    
+    </script>
+
+<input type="button" value="札分けする" onclick="gate();">
+
+</body>
+</html>
