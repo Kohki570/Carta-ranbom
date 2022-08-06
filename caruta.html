@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="caruta.css">
 
-    <title>ふだわけ</title>
+    <title>ふだわけ ver.2.0.0</title>
 </head>
+
 <body>
-<!----使用済みclass= a -->
+    <!--使用済みclass= a -->
 
- <div class="text">
-    
+    <div class="text">
 
-    <div class="a">百人一首</div>
- </div>
-<div class="cardw">
-<img class="card" src="かるた.png">
-</div>
 
-    <script type ="text/javascript">
+        <div class="a">百人一首</div>
+    </div>
+    <div class="cardw">
+        <img class="card" src="かるた.png">
+    </div>
 
-                //表裏
-                
-     function gate(){
-            rand = Math.floor(Math.random()*3);
-            if(rand ==0) msg ="表一";
-            if(rand ==1) msg ="表十";
-            if(rand ==2) msg ="裏";
+    <script type="text/javascript">
 
-             //数字ランダム (０～９の内５個抽出)
+        //表裏
+
+        function gate() {
+            rand = Math.floor(Math.random() * 3);
+            if (rand == 0) msg = "表一";
+            if (rand == 1) msg = "表十";
+            if (rand == 2) msg = "裏";
+
+
+
+
+            //数字ランダム (０～９の内５個抽出)
 
             function random(array, num) {
                 var a = array;
@@ -39,40 +44,122 @@
                 var l = a.length;
                 var n = num < l ? num : l;
                 while (n-- > 0) {
-                  var i = Math.random() * l | 0;
-                  r[n] = t[i] || a[i];
-                  --l;
-                  t[i] = t[l] || a[l];
+                    var i = Math.random() * l | 0;
+                    r[n] = t[i] || a[i];
+                    --l;
+                    t[i] = t[l] || a[l];
                 }
                 return r;
-              }
-            
-             
-              
-              var test_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-              fivefig = random(test_array, 5);
+            }
 
 
-              //数字５個を小さい順にする
 
-              fivefig.sort(
-                    function(a,b){
-                        return (a < b ? -1:1);
-                    }
-              );
+            var test_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            fivefig = random(test_array, 5);
 
-    alert(msg +" の " + fivefig);
 
-     }
-            
-     
-    
-    
+            //数字５個を小さい順にする
+
+            fivefig.sort(
+                function (a, b) {
+                    return (a < b ? -1 : 1);
+                }
+            );
+
+            //数字ランダム (1～10の内５個抽出)
+
+            function random(array, num) {
+                var a = array;
+                var t = [];
+                var r = [];
+                var l = a.length;
+                var n = num < l ? num : l;
+                while (n-- > 0) {
+                    var i = Math.random() * l | 0;
+                    r[n] = t[i] || a[i];
+                    --l;
+                    t[i] = t[l] || a[l];
+                }
+                return r;
+            }
+
+
+
+            var test_array = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            fivefigs = random(test_array, 5);
+
+
+            //数字５個を小さい順にする
+
+            fivefigs.sort(
+                function (a, b) {
+                    return (a < b ? -1 : 1);
+                }
+            );
+
+
+            if (msg == "裏") var fivefig = fivefigs;
+
+
+
+            alert(msg + " の " + fivefig);
+
+        }
+
+        function ddd() {
+            rand = Math.floor(Math.random() * 33);
+            if (rand == 0) dks = "山下";
+            if (rand == 1) dks = "五味";
+            if (rand == 2) dks = "芹野";
+            if (rand == 3) dks = "楠田";
+            if (rand == 4) dks = "稲葉";
+            if (rand == 5) dks = "廣本";
+            if (rand == 6) dks = "西田";
+            if (rand == 7) dks = "吉川";
+            if (rand == 8) dks = "和家";
+
+            if (rand == 9) dks = "山下";
+            if (rand == 10) dks = "五味";
+            if (rand == 11) dks = "芹野";
+            if (rand == 12) dks = "楠田";
+            if (rand == 13) dks = "稲葉";
+            if (rand == 14) dks = "廣本";
+            if (rand == 15) dks = "吉川";
+            if (rand == 16) dks = "和家";
+
+            if (rand == 17) dks = "山下";
+            if (rand == 18) dks = "五味";
+            if (rand == 19) dks = "芹野";
+            if (rand == 20) dks = "楠田";
+            if (rand == 21) dks = "稲葉";
+            if (rand == 22) dks = "廣本";
+            if (rand == 23) dks = "吉川";
+            if (rand == 24) dks = "和家";
+
+            if (rand == 25) dks = "山下";
+            if (rand == 26) dks = "五味";
+            if (rand == 27) dks = "芹野";
+            if (rand == 28) dks = "楠田";
+            if (rand == 29) dks = "稲葉";
+            if (rand == 30) dks = "廣本";
+            if (rand == 31) dks = "吉川";
+            if (rand == 32) dks = "和家";
+
+            alert(dks + "読手");
+
+        }
+
+
     </script>
 
-<p>
-<input type="button" value="札分けする" onclick="gate();">
-</p>
+    <p>
+        <input class=fdwk type="button" value="札分けする" onclick="gate();">
+    </p>
+
+    <p>
+        <input class=dks type="button" value="読手ガチャ" onclick="ddd();">
+    </p>
 
 </body>
+
 </html>
