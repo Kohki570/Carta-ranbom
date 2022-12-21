@@ -16,7 +16,7 @@
     <div class="text">
 
 
-        <div class="a">百人一首</div>
+        <div class="hyaku">百人一首</div>
     </div>
     <div class="cardw">
         <img class="card" src="かるた.png">
@@ -24,16 +24,8 @@
 
     <script type="text/javascript">
 
-        //表裏
 
-        function gate() {
-            rand = Math.floor(Math.random() * 3);
-            if (rand == 0) msg = "表一";
-            if (rand == 1) msg = "表十";
-            if (rand == 2) msg = "裏";
-
-
-
+        function gate1() {
 
             //数字ランダム (０～９の内５個抽出)
 
@@ -56,7 +48,6 @@
 
             var test_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
             fivefig = random(test_array, 5);
-
 
             //数字５個を小さい順にする
 
@@ -84,6 +75,143 @@
             }
 
 
+            var test_array = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            fivefigs = random(test_array, 5);
+
+
+            //数字５個を小さい順にする
+
+            fivefigs.sort(
+                function (a, b) {
+                    return (a < b ? -1 : 1);
+                }
+            );
+            result = "表一の " + fivefig
+            
+            document.getElementById("result").innerHTML = decodeURIComponent(result);
+
+            var text = result.value;
+        }
+
+
+        function gate2() {
+
+            //数字ランダム (０～９の内５個抽出)
+
+            function random(array, num) {
+                var a = array;
+                var t = [];
+                var r = [];
+                var l = a.length;
+                var n = num < l ? num : l;
+                while (n-- > 0) {
+                    var i = Math.random() * l | 0;
+                    r[n] = t[i] || a[i];
+                    --l;
+                    t[i] = t[l] || a[l];
+                }
+                return r;
+            }
+
+
+
+            var test_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            fivefig = random(test_array, 5);
+
+            //数字５個を小さい順にする
+
+            fivefig.sort(
+                function (a, b) {
+                    return (a < b ? -1 : 1);
+                }
+            );
+
+            //数字ランダム (1～10の内５個抽出)
+
+            function random(array, num) {
+                var a = array;
+                var t = [];
+                var r = [];
+                var l = a.length;
+                var n = num < l ? num : l;
+                while (n-- > 0) {
+                    var i = Math.random() * l | 0;
+                    r[n] = t[i] || a[i];
+                    --l;
+                    t[i] = t[l] || a[l];
+                }
+                return r;
+            }
+
+
+            var test_array = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            fivefigs = random(test_array, 5);
+
+
+            //数字５個を小さい順にする
+
+            fivefigs.sort(
+                function (a, b) {
+                    return (a < b ? -1 : 1);
+                }
+            );
+            result =  " 表十の " + fivefig
+            
+            document.getElementById("result").innerHTML = decodeURIComponent(result);
+
+            var text = result.value;
+        }
+
+
+        function gate3() {
+
+            //数字ランダム (０～９の内５個抽出)
+
+            function random(array, num) {
+                var a = array;
+                var t = [];
+                var r = [];
+                var l = a.length;
+                var n = num < l ? num : l;
+                while (n-- > 0) {
+                    var i = Math.random() * l | 0;
+                    r[n] = t[i] || a[i];
+                    --l;
+                    t[i] = t[l] || a[l];
+                }
+                return r;
+            }
+
+
+
+            var test_array = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            fivefig = random(test_array, 5);
+
+            //数字５個を小さい順にする
+
+            fivefig.sort(
+                function (a, b) {
+                    return (a < b ? -1 : 1);
+                }
+            );
+
+            //数字ランダム (1～10の内５個抽出)
+
+            function random(array, num) {
+                var a = array;
+                var t = [];
+                var r = [];
+                var l = a.length;
+                var n = num < l ? num : l;
+                while (n-- > 0) {
+                    var i = Math.random() * l | 0;
+                    r[n] = t[i] || a[i];
+                    --l;
+                    t[i] = t[l] || a[l];
+                }
+                return r;
+            }
+
 
             var test_array = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9];
             fivefigs = random(test_array, 5);
@@ -97,14 +225,17 @@
                 }
             );
 
+            result = "裏　の " + fivefig
+            document.getElementById("result").innerHTML = decodeURIComponent(result);
 
-            if (msg == "裏") var fivefig = fivefigs;
+            var text = result.value;
 
-
-
-            alert(msg + " の " + fivefig);
-
+            //location.href = "caruta.html?data="+encodeURIComponent(text);
         }
+
+
+
+    
 
         function ddd() {
             rand = Math.floor(Math.random() * 33);
@@ -151,14 +282,22 @@
 
 
     </script>
+  <div>
+        <div class="result" id="result"></div>
+    </div>
+    <div>
+        <input class=fdwk1 type="button" value="表一" onclick="gate1();">
 
-    <p>
-        <input class=fdwk type="button" value="札分けする" onclick="gate();">
-    </p>
+        <input class=fdwk2 type="button" value="表十" onclick="gate2();">
+    </div>
 
-    <p>
+    <div>
+        <input class=fdwk3 type="button" value="裏" onclick="gate3();">
+    </div>
+  
+    <div>
         <input class=dks type="button" value="読手ガチャ" onclick="ddd();">
-    </p>
+    </div>
 
 </body>
 

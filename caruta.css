@@ -1,29 +1,89 @@
-.a{
-   
-    font-size: 70px;
+html {
+    touch-action: manipulation;
+  }
+
+.hyaku{
+    font-size: 40px;
     color:green;
-    margin-left: 30px;
-    font-family: 'HG行書体';
+    left: 110px;
+    position: absolute;
 }
 
 .card{
     width: 350px;
+    top: 50px;
     position: absolute;
 }
 
-.fdwk{
+.fdwk1{
     position: relative;
     top:90px;
-    left: 90px;
+    left: 55px;
     font-size: 25px;
-    width:170px;
+    width:100px;
     height: 80px;
     
   }
 
+.fdwk2{
+    position: relative;
+    top:90px;
+    left: 90px;
+    font-size: 25px;
+    width:100px;
+    height: 80px;
+    
+  }
+
+.fdwk3{
+    position: relative;
+    top:100px;
+    left: 125px;
+    font-size: 25px;
+    width:100px;
+    height: 80px;
+    
+  }
+
+
+
+
+.result {
+    position:relative;
+    top:75px;
+    left: 20px;
+    font-size: 36px;
+    width:300px;
+    height: 50px;
+    color: white;
+    background:rgba(117,153,66,0.9);
+    border: solid;
+    }
+    
+
+@media(orientation: landscape) 
+    {
+        .result {
+            text-align: center;
+            position:relative;
+            top:50px;
+            left: 5px;
+            font-size: 90px;
+            width:620px;
+            height: 300px;
+            color: white;
+            background:rgba(117,153,66,1);
+            border: solid;
+            z-index: 1;
+           }
+      }
+
+
+
+
 .dks{
      position: relative;
-    top: 200px;
+    top: 150px;
     left: 90px;
     font-size: 25px;
     width:170px;
