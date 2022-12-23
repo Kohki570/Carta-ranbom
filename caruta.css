@@ -57,35 +57,20 @@ html {
     width:300px;
     height: 50px;
     color: white;
-    background:rgba(117,153,66,0.9);
-    border: solid;
-    border-color:rgba(87,123,36) ;
-    border-radius: 10px 10px 10px 10px;
     }
-    
-
-@media(orientation: landscape) 
-    {
-        .result {
-            text-align: center;
-            position:relative;
-            top:50px;
-            left: 5px;
-            font-size: 90px;
-            width:620px;
-            height: 300px;
-            color: white;
-            background:rgba(117,153,66,1);
-            border: solid;
-            z-index: 1;
-            border-color:rgba(87,123,36) ;
-            border-radius: 20px 20px 20px 20px;
-           }
-      }
-
-
-
-
+.resultback{
+  position:absolute;
+  top:79px;
+  left: 25px;
+  font-size: 35px;
+  width:310px;
+  height: 50px;
+  
+  background:rgba(117,153,66,0.9);
+  border: solid;
+  border-color:rgba(87,123,36) ;
+  border-radius: 10px 10px 10px 10px;
+}
 .dks{
      position: relative;
     top: 150px;
@@ -94,3 +79,88 @@ html {
     width:170px;
     height: 80px;
     }
+
+@media(orientation: landscape) 
+    {
+
+      .hyaku{
+        font-size: 40px;
+        color:green;
+        left: 240px;
+        position: absolute;
+    }
+    
+    .card{
+        width: 640px;
+        top: 50px;
+        position: absolute;
+    }
+    
+    .fdwk1{
+        position: relative;
+        top:90px;
+        left: 200px;
+        font-size: 25px;
+        width:100px;
+        height: 80px;
+        
+      }
+    
+    .fdwk2{
+        position: relative;
+        top:90px;
+        left: 220px;
+        font-size: 25px;
+        width:100px;
+        height: 80px;
+        
+      }
+    
+    .fdwk3{
+        position: relative;
+        top:100px;
+        left: 260px;
+        font-size: 25px;
+        width:100px;
+        height: 80px;
+        
+      }
+        .result {
+            text-align: center;
+            position:absolute;
+            top:80px;
+            left: 5px;
+            font-size: 90px;
+            width:620px;
+            height: 300px;
+            color: white;
+            z-index: 1;
+        }
+        .resultback{
+            position:relative;
+            top:60px;
+            left: 14px;
+            font-size: 90px;
+            width:612px;
+            height: 300px;
+            
+            background:rgba(117,153,66,1);
+            border: solid;
+            border-color:rgba(87,123,36) ;
+            border-radius: 10px 10px 10px 10px;
+          }
+
+      .dks{
+      position: relative;
+      top: 150px;
+      left: 220px;
+      font-size: 25px;
+      width:170px;
+      height: 80px;
+      }
+
+      }
+
+
+
+

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="caruta.css">
 
-    <title>ふだわけ ver.3.0.0</title>
+    <title>ふだわけ ver.3.1.0</title>
 </head>
 
 <body>
@@ -89,8 +89,10 @@
             result = "表一の " + fivefig
             
             document.getElementById("result").innerHTML = decodeURIComponent(result);
-
+            
+            
             var text = result.value;
+  
         }
 
 
@@ -160,6 +162,7 @@
             document.getElementById("result").innerHTML = decodeURIComponent(result);
 
             var text = result.value;
+
         }
 
 
@@ -228,8 +231,8 @@
             result = "裏　の " + fivefig
             document.getElementById("result").innerHTML = decodeURIComponent(result);
 
-            var text = result.value;
-
+            var obj = document.getElementById('result')
+            obj.style.top = "75px";
             //location.href = "caruta.html?data="+encodeURIComponent(text);
         }
 
@@ -238,52 +241,66 @@
     
 
         function ddd() {
-            rand = Math.floor(Math.random() * 33);
-            if (rand == 0) dks = "山下";
-            if (rand == 1) dks = "五味";
-            if (rand == 2) dks = "芹野";
-            if (rand == 3) dks = "楠田";
-            if (rand == 4) dks = "稲葉";
-            if (rand == 5) dks = "廣本";
-            if (rand == 6) dks = "西田";
-            if (rand == 7) dks = "吉川";
-            if (rand == 8) dks = "和家";
 
-            if (rand == 9) dks = "山下";
-            if (rand == 10) dks = "五味";
-            if (rand == 11) dks = "芹野";
-            if (rand == 12) dks = "楠田";
-            if (rand == 13) dks = "稲葉";
-            if (rand == 14) dks = "廣本";
-            if (rand == 15) dks = "吉川";
-            if (rand == 16) dks = "和家";
+            var obj = document.getElementById("result");
+                    var oob = document.getElementById("resultback");
+                    obj.style.color ="white";  
+                    oob.style.backgroundColor = 'rgba(117,153,66,0.9)' ;
+                    oob.style.borderColor = "rgba(87,123,36)";
+            const data = {
+                "山下": 125,//13%
+                "五味": 125,
+                "芹野": 125, 
+                "楠田": 125,
+                "稲葉": 125,
+                "廣本": 125,
+                "吉川": 124,
+                "和家": 124,//12% 
+            }
 
-            if (rand == 17) dks = "山下";
-            if (rand == 18) dks = "五味";
-            if (rand == 19) dks = "芹野";
-            if (rand == 20) dks = "楠田";
-            if (rand == 21) dks = "稲葉";
-            if (rand == 22) dks = "廣本";
-            if (rand == 23) dks = "吉川";
-            if (rand == 24) dks = "和家";
+            const rand = Math.floor(Math.random() * 1000)
+            let dks ="西田"//0.1%
+            let rate = 0
+            for (const prop in data) {
+                rate += data[prop]
+                if (rand <= rate) {
+                    dks = prop
+                    
+                break
+                }
+                
+            }
 
-            if (rand == 25) dks = "山下";
-            if (rand == 26) dks = "五味";
-            if (rand == 27) dks = "芹野";
-            if (rand == 28) dks = "楠田";
-            if (rand == 29) dks = "稲葉";
-            if (rand == 30) dks = "廣本";
-            if (rand == 31) dks = "吉川";
-            if (rand == 32) dks = "和家";
+            var obj = document.getElementById('result')
+        
+            obj.animate([{opacity: '0'}, {opacity: '1'}], 150)
+            document.getElementById("result").innerHTML = decodeURIComponent(dks+"読手");            
+                 
+                if(dks =="西田"){ 
+      
+                    window.setTimeout( 'alert("選ばれたのは西田読手です！おめでとう!使ってあげてください！")', 100 );
+                    var obj = document.getElementById("result");
+                    var oob = document.getElementById("resultback");
+                    obj.style.color ="#FF3300";  
+                    oob.style.backgroundColor = '#e2d06e' ;
+                    oob.style.borderColor = "#FF3300";
+                 }
+                else
+                
+            
+               
+            
+                
 
-            alert(dks + "読手");
+            return dks
+
 
         }
 
 
     </script>
   <div>
-        <div class="result" id="result"></div>
+        <div class="resultback" id="resultback"></div><div class="result" id="result"></div>
     </div>
     <div>
         <input class=fdwk1 type="button" value="表一" onclick="gate1();">
