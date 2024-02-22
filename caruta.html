@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="caruta.css">
     <link rel="icon" href="favicon.png" sizes="48x48">
     <link rel="apple-touch-icon" sizes="152x152" href="/favicon.png">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-<link rel="apple-touch-icon" href="favicon.png" sizes="180x180">
-<link rel="icon" type="image/png" href="favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="favicon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="192x192">
     <title>ふだわけ</title>
 </head>
 
@@ -20,7 +21,7 @@
     <div class="text">
 
 
-        <div class="hyaku">百人一首</div>
+
     </div>
     <div class="cardw">
         <img class="card" src="かるた.png">
@@ -91,12 +92,12 @@
                 }
             );
             result = "表一の " + fivefig
-            
-            document.getElementById("result").innerHTML = decodeURIComponent(result);
-            
-            
+
+            document.getElementById("resultback").innerHTML = decodeURIComponent(result);
+
+
             var text = result.value;
-  
+
         }
 
 
@@ -161,9 +162,9 @@
                     return (a < b ? -1 : 1);
                 }
             );
-            result =  " 表十の " + fivefig
-            
-            document.getElementById("result").innerHTML = decodeURIComponent(result);
+            result = " 表十の " + fivefig
+
+            document.getElementById("resultback").innerHTML = decodeURIComponent(result);
 
             var text = result.value;
 
@@ -233,28 +234,27 @@
             );
 
             result = "裏　の " + fivefig
-            document.getElementById("result").innerHTML = decodeURIComponent(result);
+            document.getElementById("resultback").innerHTML = decodeURIComponent(result);
 
-            var obj = document.getElementById('result')
-            obj.style.top = "75px";
+            var obj = document.getElementById('resultback')
+            
             //location.href = "caruta.html?data="+encodeURIComponent(text);
         }
 
 
 
-    
+
 
         function ddd() {
 
-            var obj = document.getElementById("result");
-                    var oob = document.getElementById("resultback");
-                    obj.style.color ="white";  
-                    oob.style.backgroundColor = 'rgba(117,153,66,0.9)' ;
-                    oob.style.borderColor = "rgba(87,123,36)";
+            var oob = document.getElementById("resultback");
+            oob.style.color = "white";
+            oob.style.backgroundColor = 'rgba(117,153,66,0.9)';
+            oob.style.borderColor = "rgba(87,123,36)";
             const data = {
                 "山下": 125,//13%
                 "五味": 125,
-                "芹野": 125, 
+                "芹野": 125,
                 "楠田": 125,
                 "稲葉": 125,
                 "廣本": 125,
@@ -263,48 +263,49 @@
             }
 
             const rand = Math.floor(Math.random() * 1000)
-            let dks ="西田"//0.1%
+            let dks = "西田"//0.1%
             let rate = 0
             for (const prop in data) {
                 rate += data[prop]
                 if (rand <= rate) {
                     dks = prop
-                    
-                break
+
+                    break
                 }
-                
+
             }
 
-            var obj = document.getElementById('result')
-        
-            obj.animate([{opacity: '0'}, {opacity: '1'}], 150)
-            document.getElementById("result").innerHTML = decodeURIComponent(dks+"読手");            
-                 
-                if(dks =="西田"){ 
-      
-                    window.setTimeout( 'alert("選ばれたのは西田読手です！おめでとう!使ってあげてください！")', 10 );
-                    var obj = document.getElementById("result");
-                    var oob = document.getElementById("resultback");
-                    obj.style.color ="#FF3300";  
-                    oob.style.backgroundColor = '#e2d06e' ;
-                    oob.style.borderColor = "#FF3300";
-                 }
-                else
-                
-            
-               
-            
-                
+            var obj = document.getElementById('resultback')
 
-            return dks
+            obj.animate([{ opacity: '0.5' }, { opacity: '1' }], 200)
+            document.getElementById("resultback").innerHTML = decodeURIComponent(dks + "読手");
+
+            if (dks == "西田") {
+
+                window.setTimeout('alert("選ばれたのは西田読手です！おめでとう!使ってあげてください！")', 10);
+                //var obj = document.getElementById("result");
+                var oob = document.getElementById("resultback");
+                oob.style.color = "#FF3300";
+                oob.style.backgroundColor = '#e2d06e';
+                oob.style.borderColor = "#FF3300";
+            }
+            else
+
+
+
+
+
+
+                return dks
 
 
         }
 
 
     </script>
-  <div>
-        <div class="resultback" id="resultback"></div><div class="result" id="result"></div>
+    <div>
+        <div class="resultback" id="resultback"></div>
+        <div class="result" id="result"></div>
     </div>
     <div>
         <input class=fdwk1 type="button" value="表一" onclick="gate1();">
@@ -315,7 +316,7 @@
     <div>
         <input class=fdwk3 type="button" value="裏" onclick="gate3();">
     </div>
-  
+
     <div>
         <input class=dks type="button" value="読手ガチャ" onclick="ddd();">
     </div>
