@@ -1,166 +1,192 @@
+html {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  overflow: hidden;
+
+
+}
+
 body {
-    touch-action: manipulation;
+  background:
+    linear-gradient(0deg,
+      rgba(139, 126, 74, 0.8),
+      rgba(168, 157, 95, 0.6) 10%,
+      rgba(168, 157, 95, 0.2) 90%,
+      rgba(139, 126, 74, 0.8)),
+    linear-gradient(90deg,
+      #f9daa4,
+      #f9daa4 25%,
+      #cea660 25%,
+      #cea660 50%,
+      #ddba78 50%,
+      #ddba78 75%,
+      #c69f5a 75%,
+      #c69f5a);
+  background-size: 10px 97px;
+}
+
+@media (orientation: portrait) and (min-width: 375px) {
+  /*iphone8 縦 */
+
+  .card {
+    width: 360px;
+    top: 83px;
+    position: absolute;
+  }
+
+  .fdwk1 {
+    position: relative;
+    top: 190px;
+    left: 55px;
+    font-size: 30px;
+    width: 110px;
+    height: 80px;
+    color: green;
+    background-color: #8aab47;
+  }
+
+  .fdwk2 {
+    position: relative;
+    top: 190px;
+    left: 90px;
+    font-size: 30px;
+    width: 110px;
+    height: 80px;
+    color: green;
+    background-color: #8aab47;
 
   }
 
-.hyaku{
-    font-size: 40px;
-    color:green;
-    left: 110px;
+  .fdwk3 {
+    position: relative;
+    top: 210px;
+    left: 125px;
+    font-size: 30px;
+    width: 110px;
+    height: 80px;
+    color: green;
+    background-color: #8aab47;
+  }
+
+
+
+
+
+  .resultback {
     position: absolute;
+    top: 120px;
+    left: 30px;
+    font-size: 35px;
+    width: 310px;
+    height: 50px;
+
+    background: rgba(117, 153, 66, 0.9);
+    border: solid;
+    border-color: rgba(87, 123, 36);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    color: white;
+  }
+
+  .dks {
+    position: relative;
+    top: 230px;
+    left: 90px;
+    font-size: 25px;
+    width: 170px;
+    height: 80px;
+    color: green;
+    background-color: #8aab47;
+  }
+
+
 }
 
-.card{
-    width: 350px;
+
+
+@media(orientation: landscape) {
+
+  .hyaku {
+    font-size: 40px;
+    color: green;
+    left: 240px;
+    position: absolute;
+  }
+
+  .card {
+    width: 640px;
     top: 50px;
     position: absolute;
-}
-
-.fdwk1{
-    position: relative;
-    top:90px;
-    left: 55px;
-    font-size: 25px;
-    width:100px;
-    height: 80px;
-    
   }
 
-.fdwk2{
+  .fdwk1 {
     position: relative;
-    top:90px;
-    left: 90px;
+    top: 90px;
+    left: 200px;
     font-size: 25px;
-    width:100px;
+    width: 100px;
     height: 80px;
-    
+
   }
 
-.fdwk3{
+  .fdwk2 {
     position: relative;
-    top:100px;
-    left: 125px;
+    top: 90px;
+    left: 220px;
     font-size: 25px;
-    width:100px;
+    width: 100px;
     height: 80px;
-    
+
   }
 
+  .fdwk3 {
+    position: relative;
+    top: 100px;
+    left: 260px;
+    font-size: 25px;
+    width: 100px;
+    height: 80px;
 
+  }
 
-
-.result {
-  text-align: center;
-    position:relative;
-    top:75px;
-    left: 20px;
-    font-size: 35px;
-    width:300px;
-    height: 50px;
+  .result {
+    text-align: center;
+    position: absolute;
+    top: 80px;
+    left: 5px;
+    font-size: 90px;
+    width: 620px;
+    height: 300px;
     color: white;
-    }
-.resultback{
-  position:absolute;
-  top:79px;
-  left: 25px;
-  font-size: 35px;
-  width:310px;
-  height: 50px;
-  
-  background:rgba(117,153,66,0.9);
-  border: solid;
-  border-color:rgba(87,123,36) ;
-  border-radius: 10px 10px 10px 10px;
-}
-.dks{
-     position: relative;
+    z-index: 1;
+  }
+
+  .resultback {
+    position: relative;
+    top: 60px;
+    left: 14px;
+    font-size: 90px;
+    width: 612px;
+    height: 300px;
+
+    background: rgba(117, 153, 66, 1);
+    border: solid;
+    border-color: rgba(87, 123, 36);
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  .dks {
+    position: relative;
     top: 150px;
-    left: 90px;
+    left: 220px;
     font-size: 25px;
-    width:170px;
+    width: 170px;
     height: 80px;
-    }
+  }
 
-@media(orientation: landscape) 
-    {
-
-      .hyaku{
-        font-size: 40px;
-        color:green;
-        left: 240px;
-        position: absolute;
-    }
-    
-    .card{
-        width: 640px;
-        top: 50px;
-        position: absolute;
-    }
-    
-    .fdwk1{
-        position: relative;
-        top:90px;
-        left: 200px;
-        font-size: 25px;
-        width:100px;
-        height: 80px;
-        
-      }
-    
-    .fdwk2{
-        position: relative;
-        top:90px;
-        left: 220px;
-        font-size: 25px;
-        width:100px;
-        height: 80px;
-        
-      }
-    
-    .fdwk3{
-        position: relative;
-        top:100px;
-        left: 260px;
-        font-size: 25px;
-        width:100px;
-        height: 80px;
-        
-      }
-        .result {
-            text-align: center;
-            position:absolute;
-            top:80px;
-            left: 5px;
-            font-size: 90px;
-            width:620px;
-            height: 300px;
-            color: white;
-            z-index: 1;
-        }
-        .resultback{
-            position:relative;
-            top:60px;
-            left: 14px;
-            font-size: 90px;
-            width:612px;
-            height: 300px;
-            
-            background:rgba(117,153,66,1);
-            border: solid;
-            border-color:rgba(87,123,36) ;
-            border-radius: 10px 10px 10px 10px;
-          }
-
-      .dks{
-      position: relative;
-      top: 150px;
-      left: 220px;
-      font-size: 25px;
-      width:170px;
-      height: 80px;
-      }
-
-      }
-
-
-
+}
