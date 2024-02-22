@@ -8,10 +8,6 @@ html {
   -khtml-user-drag: none;
   overflow: hidden;
 
-
-}
-
-body {
   background:
     linear-gradient(0deg,
       rgba(139, 126, 74, 0.8),
@@ -29,6 +25,7 @@ body {
       #c69f5a);
   background-size: 10px 97px;
 }
+
 
 @media (orientation: portrait) and (min-width: 375px) {
   /*iphone8 縦 */
